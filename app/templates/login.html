@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            gap: 2px;
+            margin: auto;
+            margin-top: 2%;
+        }
+        .link_botao {
+            text-align: center;
+        }
+        .msg-flash {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Exibir mensagens flash -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="msg-flash">
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <form action="login" method="post">
+        <label for="">Nome de Usuário</label>
+        <input type="text" name="username">
+        <label for="">Senha</label>
+        <input type="text" name="password">
+        <button>Logar</button>
+    </form>
+
+    <div class="link_botao">
+        <p>não tem cadastro, faça aqui em embaixo</p>
+        <a href="/cadastrar_botao"><button>Cadastrar</button></a>
+    </div>
+</body>
+
+</html>

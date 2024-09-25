@@ -18,7 +18,7 @@ def cadastrar():
         cursor = conectar.cursor()
         cursor.execute("INSERT INTO users(username, password) VALUES(?, ?)", (username, password))
         conectar.commit()
-        flash("Usuário cadastrado com sucesso ! ola")
+        flash("Usuário cadastrado com sucesso !")
     except sqlite3.IntegrityError:
         flash("[ERRO], Usuário já existe !")
     finally:

@@ -25,8 +25,8 @@ def criarTabela_gerenciador():
     produto TEXT NOT NULL,
     valor REAL NOT NULL,
     quantidade INTEGER NOT NULL,
-    username TEXT,
-    FOREIGN KEY (username) REFERENCES users(username))
+    id_user INTEGER,
+    FOREIGN KEY (id_user) REFERENCES users(id))
     """)
 
     conectar.commit()
@@ -56,7 +56,7 @@ def InserirDadosFicticios():
 def LimparTabela():
     conectar = conexao()
     cursor = conectar.cursor()
-    cursor.execute('DELETE FROM users')
+    cursor.execute('DELETE FROM gerenciador')
 
     conectar.commit()
     conectar.close()

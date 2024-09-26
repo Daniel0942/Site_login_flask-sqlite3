@@ -26,11 +26,17 @@ def login():
         return render_template("produto.html")
     else:
         flash("[ERRO], Usuário ou senha incorretos!")
-        return redirect(url_for("login"))
+        return redirect(url_for("index"))
 
 @app.route("/cadastrar_botao")
 def cadastrar_botao():
     return render_template("cadastro.html")
+
+@app.route("/logout")
+def logout():
+    session.pop("user_id", None)  # Remove a chave 'user_id' da sessão
+    flash("Logout feito com sucesso !")
+    return redirect(url_for("index"))
 
 @app.route("/cadastrar", methods = ["POST"])
 def cadastrar():

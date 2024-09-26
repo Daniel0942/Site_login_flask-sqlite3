@@ -1,0 +1,15 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    gap: 2px;
+    margin: auto;
+    margin-top: 2%;
+}
+.link_botao {
+    text-align: center;
+}
+.msg-flash {
+    text-align: center;
+}
+    

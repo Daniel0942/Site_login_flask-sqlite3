@@ -3,20 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSS-->
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css') }}">
     <title>cadastro de Produtos</title>
-    <style>
-        form {
-            display: flex;
-            flex-direction: column;
-            width: 200px;
-            gap: 2px;
-            margin: auto;
-            margin-top: 2%;
-        }
-        .msg-flash {
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
     <!-- Exibir mensagens flash -->
